@@ -1,0 +1,89 @@
+// app ---------------------------------------
+#app {
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+// Header ---------------------------------------
+.app-header {
+  padding: 0;
+  position: fixed;
+  .dropdown-menu {
+    padding: 0;
+    .dropdown-item {
+      padding: 12px 25px;
+      border-bottom: 1px solid $gray-200;
+    }
+  }
+}
+
+[v-cloak] {
+  display: none;
+}
+
+// Sidebar ---------------------------------------
+@media (min-width: 992px) {
+  .sidebar-minimized .sidebar .sidebar-nav {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+// Main ------------------------------------------
+.main .container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (max-width: 575.98px) {
+  .aside-menu-show .main::before,
+  .sidebar-show .main::before {
+    background: none;
+  }
+}
+
+
+// Breadcrumb ------------------------------------
+.breadcrumb {
+  background-color: transparent;
+  border-radius: 0;
+
+}
+.breadcrumb-menu {
+  & .btn-outline-success, .btn-outline-primary {
+    border: 1px solid transparent;
+    border-color: inherit;
+    padding: 0 0.55rem;
+  }
+}
+
+// Form ------------------------------------------
+.input-group-text {
+  background-color: transparent;
+}
+
+// Card ------------------------------------------
+// .card-header, .card-footer {
+//   background-color: transparent;
+// }
+// .card-header {
+//   padding: 1.25rem;
+//   color: $blue;
+//   font-weight: bold;
+// }
+.card-footer {
+  border-top: none;
+}
+
+// Toasted ---------------------------------------
+.toasted-container {
+  &.top-left, &.top-center, &.top-right {
+    top: 3% !important;
+  }
+  &.bottom-left, &.bottom-center, &.bottom-right {
+    bottom: 3% !important;
+  }
+}

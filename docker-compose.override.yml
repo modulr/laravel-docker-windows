@@ -1,0 +1,34 @@
+version: '3'
+services:
+
+  nginx:
+    ports:
+      - "80:80"
+    volumes:
+      - ./laravel-scaffold:/var/www/laravel
+      - ./images/nginx/vhost.conf:/etc/nginx/conf.d/laravel.conf
+    working_dir:
+      /var/www/laravel
+
+  php:
+    ports:
+      - "9001:9000"
+    volumes:
+      - ./laravel-scaffold:/var/www/laravel
+      - ./images/php-fpm/php.ini:/usr/local/etc/php/php.ini
+    working_dir:
+      /var/www/laravel
+
+  mysql:
+    ports:
+      - "3306:3306"
+    volumes:
+      - data:/var/lib/data
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: laravel
+      MYSQL_USER: root
+      MYSQL_PASSWORD: secret
+
+volumes:
+  data:
